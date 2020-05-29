@@ -75,7 +75,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card1" translatesAutoresizingMaskIntoConstraints="NO" id="BC5-gu-QHd">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_first_card_img" translatesAutoresizingMaskIntoConstraints="NO" id="BC5-gu-QHd">
                                 <rect key="frame" x="-103" y="207.5" width="387" height="425"/>
                             </imageView>
                         </subviews>
@@ -88,10 +88,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXF-HE-dMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1274" y="-93"/>
+            <point key="canvasLocation" x="1443" y="-97"/>
+        </scene>
+        <!--Second Page View Controller-->
+        <scene sceneID="XdP-uv-9ER">
+            <objects>
+                <viewController storyboardIdentifier="SecondPageViewController" id="5ht-yc-Q6j" customClass="SecondPageViewController" customModule="DwGuideAnimationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DiW-0X-fS1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z6y-c1-pVu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GlV-Vj-bYb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_second_card_img" translatesAutoresizingMaskIntoConstraints="NO" id="O4K-HR-zgK">
+                                <rect key="frame" x="111" y="207.5" width="371" height="425"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="O4K-HR-zgK" firstAttribute="centerY" secondItem="GlV-Vj-bYb" secondAttribute="centerY" constant="-28" id="OEk-kt-r9x"/>
+                            <constraint firstAttribute="trailing" secondItem="O4K-HR-zgK" secondAttribute="trailing" constant="-68" id="jRg-0x-0e1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vl4-zc-zHb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2275" y="-97"/>
+        </scene>
+        <!--Third Page View Controller-->
+        <scene sceneID="6e5-Pj-OsV">
+            <objects>
+                <viewController storyboardIdentifier="ThirdPageViewController" id="ndJ-At-V9Y" customClass="ThirdPageViewController" customModule="DwGuideAnimationDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bKe-AQ-AVQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hpb-ut-9Yt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gRF-Og-2FD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_third_card_img" translatesAutoresizingMaskIntoConstraints="NO" id="G9z-DB-t8f">
+                                <rect key="frame" x="128" y="207.5" width="286" height="425"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="G9z-DB-t8f" firstAttribute="centerY" secondItem="gRF-Og-2FD" secondAttribute="centerY" constant="-28" id="7UM-XB-Bzu"/>
+                            <constraint firstAttribute="trailing" secondItem="G9z-DB-t8f" secondAttribute="trailing" id="dxK-QE-opH"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGh-ie-5oA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3122" y="-97"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Card1" width="387" height="425"/>
+        <image name="guide_first_card_img" width="387" height="425"/>
+        <image name="guide_second_card_img" width="371" height="425"/>
+        <image name="guide_third_card_img" width="286" height="425"/>
     </resources>
 </document>

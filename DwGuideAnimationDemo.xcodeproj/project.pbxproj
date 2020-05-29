@@ -20,6 +20,8 @@
 		A6327BF22480F69300C01263 /* VideoBackgroundError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6327BF02480F69300C01263 /* VideoBackgroundError.swift */; };
 		A6327BF32480F69300C01263 /* VideoBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6327BF12480F69300C01263 /* VideoBackground.swift */; };
 		A6327BF524810C1300C01263 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6327BF424810C1300C01263 /* FirstPageViewController.swift */; };
+		A6327BF72481155700C01263 /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6327BF62481155700C01263 /* SecondPageViewController.swift */; };
+		A6327BF92481156200C01263 /* ThirdPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6327BF82481156200C01263 /* ThirdPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		A6327BF02480F69300C01263 /* VideoBackgroundError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoBackgroundError.swift; sourceTree = "<group>"; };
 		A6327BF12480F69300C01263 /* VideoBackground.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoBackground.swift; sourceTree = "<group>"; };
 		A6327BF424810C1300C01263 /* FirstPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		A6327BF62481155700C01263 /* SecondPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
+		A6327BF82481156200C01263 /* ThirdPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPageViewController.swift; sourceTree = "<group>"; };
 		B287960924DEBFE3B7EBCDE6 /* Pods-DwGuideAnimationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwGuideAnimationDemo.release.xcconfig"; path = "Target Support Files/Pods-DwGuideAnimationDemo/Pods-DwGuideAnimationDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +106,8 @@
 				A6327BDF2480F5B900C01263 /* LaunchScreen.storyboard */,
 				A6327BE22480F5B900C01263 /* Info.plist */,
 				A6327BF424810C1300C01263 /* FirstPageViewController.swift */,
+				A6327BF62481155700C01263 /* SecondPageViewController.swift */,
+				A6327BF82481156200C01263 /* ThirdPageViewController.swift */,
 			);
 			path = DwGuideAnimationDemo;
 			sourceTree = "<group>";
@@ -247,8 +253,10 @@
 				A6327BF32480F69300C01263 /* VideoBackground.swift in Sources */,
 				A6327BD92480F5B700C01263 /* ViewController.swift in Sources */,
 				A6327BD52480F5B700C01263 /* AppDelegate.swift in Sources */,
+				A6327BF72481155700C01263 /* SecondPageViewController.swift in Sources */,
 				A6327BF22480F69300C01263 /* VideoBackgroundError.swift in Sources */,
 				A6327BD72480F5B700C01263 /* SceneDelegate.swift in Sources */,
+				A6327BF92481156200C01263 /* ThirdPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
