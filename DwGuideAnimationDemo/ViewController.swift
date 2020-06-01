@@ -84,6 +84,10 @@ class ViewController: UIViewController {
         let currentBg = self.bgViews[self.currentBgIndex % 2]
         self.currentBgIndex += 1
         let nextBg = self.bgViews[self.currentBgIndex % 2]
+        
+//        currentBg.layer.removeAllAnimations()
+//        nextBg.layer.removeAllAnimations()
+        
         if currentBgIndex % 2 == 0 {
             try? VideoBackground.shared.play(
                 view: nextBg,
@@ -100,6 +104,20 @@ class ViewController: UIViewController {
             )
         }
         
+        // 想用来取消，暂时效果不好，待优化。
+//        let disapearAnimation = CABasicAnimation(keyPath: "opacity")
+//        disapearAnimation.duration = duration
+//        disapearAnimation.toValue = 0.0
+//        disapearAnimation.fillMode = .forwards
+//        disapearAnimation.isRemovedOnCompletion = false
+//        currentBg.layer.add(disapearAnimation, forKey: "DisapearAnimation")
+//
+//        let apearAnimation = CABasicAnimation(keyPath: "opacity")
+//        apearAnimation.duration = duration
+//        apearAnimation.toValue = 1.0
+//        apearAnimation.fillMode = .forwards
+//        apearAnimation.isRemovedOnCompletion = false
+//        nextBg.layer.add(disapearAnimation, forKey: "ApearAnimation")
         
         UIView.animate(withDuration: duration, animations: {
             currentBg.alpha = 0.0
@@ -117,3 +135,13 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UIScrollViewDelegate {
+    // 因为是page的scrollView，所以一定会走结束减速。在这里停止视频
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if self.currentBgIndex % 2 == 0 {
+            VideoBackground.shared2.cleanUp()
+        } else {
+            VideoBackground.shared.cleanUp()
+        }
+    }
+}
