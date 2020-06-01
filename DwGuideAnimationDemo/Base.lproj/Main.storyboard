@@ -33,7 +33,7 @@
                                 </connections>
                             </scrollView>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="IPj-gu-vC7">
-                                <rect key="frame" x="187.5" y="644.5" width="39" height="37"/>
+                                <rect key="frame" x="187.5" y="659.5" width="39" height="37"/>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -44,7 +44,7 @@
                             <constraint firstItem="R7y-Km-3Sy" firstAttribute="trailing" secondItem="RYt-2d-4XZ" secondAttribute="trailing" id="T6f-Ze-IxH"/>
                             <constraint firstAttribute="bottom" secondItem="RYt-2d-4XZ" secondAttribute="bottom" id="V93-mK-OQx"/>
                             <constraint firstItem="RYt-2d-4XZ" firstAttribute="top" secondItem="Msw-0h-XLC" secondAttribute="top" id="XHF-fK-fpe"/>
-                            <constraint firstItem="IPj-gu-vC7" firstAttribute="centerY" secondItem="xDI-fi-oAG" secondAttribute="centerY" constant="215" id="dTp-E5-rU3"/>
+                            <constraint firstItem="IPj-gu-vC7" firstAttribute="centerY" secondItem="xDI-fi-oAG" secondAttribute="centerY" constant="230" id="dTp-E5-rU3"/>
                             <constraint firstAttribute="bottom" secondItem="xDI-fi-oAG" secondAttribute="bottom" id="eYU-XH-S1t"/>
                             <constraint firstItem="R7y-Km-3Sy" firstAttribute="bottom" secondItem="RYt-2d-4XZ" secondAttribute="bottom" id="ebG-Du-h71"/>
                             <constraint firstItem="IPj-gu-vC7" firstAttribute="centerX" secondItem="Msw-0h-XLC" secondAttribute="centerX" id="ivo-uj-xW9"/>
@@ -79,15 +79,79 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_first_card_img" translatesAutoresizingMaskIntoConstraints="NO" id="BC5-gu-QHd">
-                                <rect key="frame" x="-103" y="207.5" width="387" height="425"/>
+                                <rect key="frame" x="-127.5" y="161" width="471.5" height="518"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="BC5-gu-QHd" secondAttribute="height" multiplier="387:425" id="mRw-M2-rF0"/>
+                                    <constraint firstAttribute="height" constant="518" id="nIa-OC-QhA"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXCLUSIVE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2PA-gF-rN1">
+                                <rect key="frame" x="73" y="211" width="111" height="29"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Plans" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAd-xL-sRn">
+                                <rect key="frame" x="71" y="240" width="152" height="44"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_first_page_img_1" translatesAutoresizingMaskIntoConstraints="NO" id="Egu-Al-eaV">
+                                <rect key="frame" x="48" y="329" width="116" height="116"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="4kF-He-y7L"/>
+                                    <constraint firstAttribute="height" constant="116" id="EBu-FA-1Oh"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_first_page_img_2" translatesAutoresizingMaskIntoConstraints="NO" id="dBC-wP-eU2">
+                                <rect key="frame" x="170" y="329" width="167" height="167"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="167" id="2wN-y0-Tzc"/>
+                                    <constraint firstAttribute="height" constant="167" id="dg6-wB-oug"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_first_page_img_3" translatesAutoresizingMaskIntoConstraints="NO" id="cQi-o5-ep2">
+                                <rect key="frame" x="20" y="451" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="d9R-Nt-OHC"/>
+                                    <constraint firstAttribute="width" constant="140" id="zDX-Rj-cnF"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_first_page_img_4" translatesAutoresizingMaskIntoConstraints="NO" id="yh9-Ke-MWC">
+                                <rect key="frame" x="153" y="501" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="1vO-Fd-nLg"/>
+                                    <constraint firstAttribute="height" constant="140" id="48z-Pg-6Xe"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Egu-Al-eaV" firstAttribute="top" secondItem="BC5-gu-QHd" secondAttribute="top" constant="168" id="2hX-ZE-Mlk"/>
+                            <constraint firstItem="yh9-Ke-MWC" firstAttribute="top" secondItem="BC5-gu-QHd" secondAttribute="top" constant="340" id="4xl-jh-RS2"/>
+                            <constraint firstItem="cQi-o5-ep2" firstAttribute="top" secondItem="BC5-gu-QHd" secondAttribute="top" constant="290" id="AZ9-j6-x41"/>
+                            <constraint firstItem="dBC-wP-eU2" firstAttribute="top" secondItem="BC5-gu-QHd" secondAttribute="top" constant="168" id="Cke-PI-Gh4"/>
+                            <constraint firstItem="2PA-gF-rN1" firstAttribute="top" secondItem="BC5-gu-QHd" secondAttribute="top" constant="50" id="EHt-TX-hgA"/>
+                            <constraint firstItem="Egu-Al-eaV" firstAttribute="leading" secondItem="ea0-9H-Wkm" secondAttribute="leading" constant="48" id="GD3-3o-IOW"/>
                             <constraint firstItem="BC5-gu-QHd" firstAttribute="centerY" secondItem="ea0-9H-Wkm" secondAttribute="centerY" constant="-28" id="H3c-C4-91n"/>
-                            <constraint firstItem="BC5-gu-QHd" firstAttribute="leading" secondItem="ea0-9H-Wkm" secondAttribute="leading" constant="-103" id="iPw-Pu-JIv"/>
+                            <constraint firstItem="CAd-xL-sRn" firstAttribute="leading" secondItem="2PA-gF-rN1" secondAttribute="leading" constant="-2" id="HgS-gQ-uke"/>
+                            <constraint firstItem="CAd-xL-sRn" firstAttribute="top" secondItem="2PA-gF-rN1" secondAttribute="bottom" id="Nnv-4g-DNy"/>
+                            <constraint firstItem="dBC-wP-eU2" firstAttribute="leading" secondItem="ea0-9H-Wkm" secondAttribute="leading" constant="170" id="Y9F-Pw-Dnd"/>
+                            <constraint firstItem="yh9-Ke-MWC" firstAttribute="leading" secondItem="ea0-9H-Wkm" secondAttribute="leading" constant="153" id="cHd-8C-tJi"/>
+                            <constraint firstItem="cQi-o5-ep2" firstAttribute="leading" secondItem="ea0-9H-Wkm" secondAttribute="leading" constant="20" id="fDQ-8m-aCx"/>
+                            <constraint firstItem="BC5-gu-QHd" firstAttribute="leading" secondItem="ea0-9H-Wkm" secondAttribute="leading" constant="-127.5" id="iPw-Pu-JIv"/>
+                            <constraint firstItem="2PA-gF-rN1" firstAttribute="leading" secondItem="ea0-9H-Wkm" secondAttribute="leading" constant="73" id="rQW-Pd-6e8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView1" destination="Egu-Al-eaV" id="FSS-LM-E8M"/>
+                        <outlet property="imageView2" destination="dBC-wP-eU2" id="ezP-3x-UWX"/>
+                        <outlet property="imageView3" destination="cQi-o5-ep2" id="44e-kV-WJ4"/>
+                        <outlet property="imageView4" destination="yh9-Ke-MWC" id="7hu-Zc-gex"/>
+                        <outlet property="subtitleLabel" destination="CAd-xL-sRn" id="gdz-ps-ldM"/>
+                        <outlet property="titleLabel" destination="2PA-gF-rN1" id="kfp-Uv-mjP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXF-HE-dMy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,6 +214,10 @@
     </scenes>
     <resources>
         <image name="guide_first_card_img" width="387" height="425"/>
+        <image name="guide_first_page_img_1" width="97" height="96"/>
+        <image name="guide_first_page_img_2" width="139" height="139"/>
+        <image name="guide_first_page_img_3" width="113" height="114"/>
+        <image name="guide_first_page_img_4" width="106" height="107"/>
         <image name="guide_second_card_img" width="371" height="425"/>
         <image name="guide_third_card_img" width="286" height="425"/>
     </resources>

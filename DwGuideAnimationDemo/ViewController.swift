@@ -42,6 +42,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
     
+    var vc1: FirstPageViewController!
+    var vc2: SecondPageViewController!
+    var vc3: ThirdPageViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -55,9 +59,9 @@ class ViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        let vc1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstPageViewController") as! FirstPageViewController
-        let vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondPageViewController") as! SecondPageViewController
-        let vc3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThirdPageViewController") as! ThirdPageViewController
+        vc1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstPageViewController") as! FirstPageViewController
+        vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondPageViewController") as! SecondPageViewController
+        vc3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThirdPageViewController") as! ThirdPageViewController
         mainScrollView.addSubview(vc1.view)
         mainScrollView.addSubview(vc2.view)
         mainScrollView.addSubview(vc3.view)
@@ -74,6 +78,17 @@ class ViewController: UIViewController {
         }
         
         navigationController?.isNavigationBarHidden = true
+        
+        setupPagePercent()
+    }
+    
+    func setupPagePercent() {
+        let xOffset = mainScrollView.rx.contentOffset.map { $0.x }.share()
+        let xPercent1 = xOffset.map { min($0 / self.mainScrollView.frame.width, 1.0) }
+        let xPercent2 = xOffset.map { min(max($0 - self.mainScrollView.frame.width, 0) / self.mainScrollView.frame.width, 1.0) }
+        let xPercent3 = xOffset.map { min(max($0 - self.mainScrollView.frame.width * 2, 0) / self.mainScrollView.frame.width, 1.0) }
+        
+        xPercent1.bind(to: vc1.rx.progress)
     }
     
     // 放开的情况调用
