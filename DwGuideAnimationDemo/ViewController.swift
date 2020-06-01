@@ -84,11 +84,13 @@ class ViewController: UIViewController {
     
     func setupPagePercent() {
         let xOffset = mainScrollView.rx.contentOffset.map { $0.x }.share()
-        let xPercent1 = xOffset.map { min($0 / self.mainScrollView.frame.width, 1.0) }
-        let xPercent2 = xOffset.map { min(max($0 - self.mainScrollView.frame.width, 0) / self.mainScrollView.frame.width, 1.0) }
-        let xPercent3 = xOffset.map { min(max($0 - self.mainScrollView.frame.width * 2, 0) / self.mainScrollView.frame.width, 1.0) }
+        let xPercent1 = xOffset.filter { $0 <= self.mainScrollView.frame.width }.map { min($0 / self.mainScrollView.frame.width, 1.0) }
+        let xPercent2 = xOffset.filter { $0 > self.mainScrollView.frame.width && $0 <= self.mainScrollView.frame.width * 2 }.map { min(max($0 - self.mainScrollView.frame.width, 0) / self.mainScrollView.frame.width, 1.0) }
         
-        xPercent1.bind(to: vc1.rx.progress)
+        xPercent1.bind(to: vc1.rx.progress).disposed(by: disposeBag)
+        xPercent1.bind(to: vc2.rx.inProgress).disposed(by: disposeBag)
+        xPercent2.bind(to: vc2.rx.outProgress).disposed(by: disposeBag)
+        xPercent2.bind(to: vc3.rx.inProgress).disposed(by: disposeBag)
     }
     
     // 放开的情况调用

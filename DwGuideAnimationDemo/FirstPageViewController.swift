@@ -34,6 +34,7 @@ class FirstPageViewController: UIViewController {
             self.imageView4.transform = rotationAngle
         }).disposed(by: disposeBag)
         
+        // 出场动画
         progressInput
             .map { min($0 * 2, 1.0) }
             .subscribe(onNext: { [weak self] percent in
@@ -42,7 +43,6 @@ class FirstPageViewController: UIViewController {
                 self.titleLabel.alpha = max(1 - percent * 1.5, 0.0)
                 self.subtitleLabel.alpha = max(1 - percent * 1.5, 0.0)
                 
-                CGAffineTransform(translationX: -150 * percent, y: 0).scaledBy(x: 1 - percent, y: 1 - percent)
                 self.titleLabel.transform = CGAffineTransform(translationX: 300 * percent, y: 0).scaledBy(x: 1 - percent / 2, y: 1 - percent / 2)
                 self.subtitleLabel.transform = CGAffineTransform(translationX: -300 * percent, y: 0).scaledBy(x: 1 - percent / 2, y: 1 - percent / 2)
             }).disposed(by: disposeBag)
