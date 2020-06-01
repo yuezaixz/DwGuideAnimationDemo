@@ -30,9 +30,32 @@ class SecondPageViewController: UIViewController {
     }
     
     private func setupInProgress() {
-        // 文字出场
+        
+        let inProgressInputSecondHalf = inProgressInput
+            .map { $0 < 0.5 ? 0 : $0 * 2 - 1.0 }.share()
+            
+        // 菜篮里的元素出场动画
+        inProgressInputSecondHalf.subscribe(onNext: { [weak self] percent in
+            guard let self = self else { return }
+            let scalePercent = (percent + 0.5) / 1.5
+            self.imageView3.transform = CGAffineTransform(translationX: 0, y: 140 - 140 * percent).scaledBy(x: scalePercent, y: scalePercent)
+        }).disposed(by: disposeBag)
+        
+        //
         inProgressInput
-            .map { $0 < 0.5 ? 0 : $0 * 2 - 1.0 }
+            .map { $0 < 0.75 ? 0 : ($0 - 0.75) * 4 }
+            .subscribe(onNext: { [weak self] percent in
+                guard let self = self else { return }
+                self.imageView1.alpha = percent
+                self.imageView2.alpha = percent
+                
+                self.imageView1.transform = CGAffineTransform(translationX: 53 - 53 * percent, y: 129 - 129 * percent)
+                self.imageView2.transform = CGAffineTransform(translationX: -43 + 43 * percent, y: 184 - 184 * percent)
+                
+            }).disposed(by: disposeBag)
+        
+        // 文字出场
+        inProgressInputSecondHalf
             .subscribe(onNext: { [weak self] percent in
                 guard let self = self else { return }
                 self.titleLabel.alpha = percent

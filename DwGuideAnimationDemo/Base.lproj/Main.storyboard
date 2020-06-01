@@ -178,15 +178,8 @@
                                     <constraint firstAttribute="width" secondItem="O4K-HR-zgK" secondAttribute="height" multiplier="371:425" id="vEL-JH-SQD"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_second_page_img_bucket" translatesAutoresizingMaskIntoConstraints="NO" id="ZPD-TD-9Ec">
-                                <rect key="frame" x="150" y="453" width="214" height="218"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="214" id="RH9-FQ-rR5"/>
-                                    <constraint firstAttribute="height" constant="218" id="jR7-cP-aPL"/>
-                                </constraints>
-                            </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_second_page_img_blast" translatesAutoresizingMaskIntoConstraints="NO" id="nFw-0d-2Vo">
-                                <rect key="frame" x="146" y="318" width="240" height="191"/>
+                                <rect key="frame" x="151" y="318" width="240" height="191"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="eNm-TA-yHF"/>
                                     <constraint firstAttribute="height" constant="191" id="vro-Pe-6gi"/>
@@ -204,6 +197,13 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="99" id="cMS-Yw-l5R"/>
                                     <constraint firstAttribute="width" constant="70" id="gUA-q1-QSI"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_second_page_img_bucket" translatesAutoresizingMaskIntoConstraints="NO" id="ZPD-TD-9Ec">
+                                <rect key="frame" x="150" y="453" width="214" height="218"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="214" id="RH9-FQ-rR5"/>
+                                    <constraint firstAttribute="height" constant="218" id="jR7-cP-aPL"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FRESH INGREDIENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnE-Ns-G07">
@@ -234,7 +234,7 @@
                             <constraint firstItem="Eyd-hZ-uY3" firstAttribute="leading" secondItem="O4K-HR-zgK" secondAttribute="leading" constant="24" id="mlZ-0S-pYI"/>
                             <constraint firstAttribute="trailing" secondItem="RnE-Ns-G07" secondAttribute="trailing" constant="42" id="pLH-FK-GTa"/>
                             <constraint firstItem="nFw-0d-2Vo" firstAttribute="bottom" secondItem="O4K-HR-zgK" secondAttribute="bottom" constant="-170" id="sIZ-Yv-Zk0"/>
-                            <constraint firstAttribute="trailing" secondItem="nFw-0d-2Vo" secondAttribute="trailing" constant="28" id="ufC-w8-v3Q"/>
+                            <constraint firstAttribute="trailing" secondItem="nFw-0d-2Vo" secondAttribute="trailing" constant="23" id="ufC-w8-v3Q"/>
                             <constraint firstAttribute="trailing" secondItem="ny9-JP-JzP" secondAttribute="trailing" constant="18.5" id="xEZ-bb-MjX"/>
                         </constraints>
                     </view>
