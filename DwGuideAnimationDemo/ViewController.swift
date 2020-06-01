@@ -59,9 +59,9 @@ class ViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        vc1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstPageViewController") as! FirstPageViewController
-        vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondPageViewController") as! SecondPageViewController
-        vc3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThirdPageViewController") as! ThirdPageViewController
+        vc1 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FirstPageViewController") as? FirstPageViewController
+        vc2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondPageViewController") as? SecondPageViewController
+        vc3 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ThirdPageViewController") as? ThirdPageViewController
         mainScrollView.addSubview(vc1.view)
         mainScrollView.addSubview(vc2.view)
         mainScrollView.addSubview(vc3.view)
