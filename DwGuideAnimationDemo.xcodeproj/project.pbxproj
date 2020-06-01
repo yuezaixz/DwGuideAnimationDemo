@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5A91529440AF913CA0B79854 /* Pods_DwGuideAnimationDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9543513C265F61C38493B677 /* Pods_DwGuideAnimationDemo.framework */; };
 		A6327BD52480F5B700C01263 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6327BD42480F5B700C01263 /* AppDelegate.swift */; };
-		A6327BD72480F5B700C01263 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6327BD62480F5B700C01263 /* SceneDelegate.swift */; };
 		A6327BD92480F5B700C01263 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6327BD82480F5B700C01263 /* ViewController.swift */; };
 		A6327BDC2480F5B700C01263 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6327BDA2480F5B700C01263 /* Main.storyboard */; };
 		A6327BDE2480F5B800C01263 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6327BDD2480F5B800C01263 /* Assets.xcassets */; };
@@ -29,7 +28,6 @@
 		A51470E76DE24C74C4E652E3 /* Pods-DwGuideAnimationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DwGuideAnimationDemo.debug.xcconfig"; path = "Target Support Files/Pods-DwGuideAnimationDemo/Pods-DwGuideAnimationDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		A6327BD12480F5B700C01263 /* DwGuideAnimationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DwGuideAnimationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6327BD42480F5B700C01263 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6327BD62480F5B700C01263 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A6327BD82480F5B700C01263 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6327BDB2480F5B700C01263 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6327BDD2480F5B800C01263 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 				A6327BEF2480F68A00C01263 /* SwiftVideoBackground */,
 				A6327BE82480F64B00C01263 /* videos */,
 				A6327BD42480F5B700C01263 /* AppDelegate.swift */,
-				A6327BD62480F5B700C01263 /* SceneDelegate.swift */,
 				A6327BD82480F5B700C01263 /* ViewController.swift */,
 				A6327BDA2480F5B700C01263 /* Main.storyboard */,
 				A6327BDD2480F5B800C01263 /* Assets.xcassets */,
@@ -255,7 +252,6 @@
 				A6327BD52480F5B700C01263 /* AppDelegate.swift in Sources */,
 				A6327BF72481155700C01263 /* SecondPageViewController.swift in Sources */,
 				A6327BF22480F69300C01263 /* VideoBackgroundError.swift in Sources */,
-				A6327BD72480F5B700C01263 /* SceneDelegate.swift in Sources */,
 				A6327BF92481156200C01263 /* ThirdPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,6 +399,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DwGuideAnimationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -421,6 +418,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = DwGuideAnimationDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
