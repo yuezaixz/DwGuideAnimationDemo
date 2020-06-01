@@ -141,6 +141,8 @@
                             <constraint firstItem="yh9-Ke-MWC" firstAttribute="leading" secondItem="ea0-9H-Wkm" secondAttribute="leading" constant="153" id="cHd-8C-tJi"/>
                             <constraint firstItem="cQi-o5-ep2" firstAttribute="leading" secondItem="ea0-9H-Wkm" secondAttribute="leading" constant="20" id="fDQ-8m-aCx"/>
                             <constraint firstItem="BC5-gu-QHd" firstAttribute="leading" secondItem="ea0-9H-Wkm" secondAttribute="leading" constant="-127.5" id="iPw-Pu-JIv"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="2PA-gF-rN1" secondAttribute="trailing" constant="20" symbolic="YES" id="jjo-gG-8sv"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="CAd-xL-sRn" secondAttribute="trailing" constant="20" symbolic="YES" id="nZa-Oi-h69"/>
                             <constraint firstItem="2PA-gF-rN1" firstAttribute="leading" secondItem="ea0-9H-Wkm" secondAttribute="leading" constant="73" id="rQW-Pd-6e8"/>
                         </constraints>
                     </view>
@@ -170,19 +172,84 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_second_card_img" translatesAutoresizingMaskIntoConstraints="NO" id="O4K-HR-zgK">
-                                <rect key="frame" x="111" y="207.5" width="371" height="425"/>
+                                <rect key="frame" x="50" y="161" width="452" height="518"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="518" id="bci-hP-Yux"/>
+                                    <constraint firstAttribute="width" secondItem="O4K-HR-zgK" secondAttribute="height" multiplier="371:425" id="vEL-JH-SQD"/>
+                                </constraints>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_second_page_img_bucket" translatesAutoresizingMaskIntoConstraints="NO" id="ZPD-TD-9Ec">
+                                <rect key="frame" x="150" y="453" width="214" height="218"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="214" id="RH9-FQ-rR5"/>
+                                    <constraint firstAttribute="height" constant="218" id="jR7-cP-aPL"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_second_page_img_blast" translatesAutoresizingMaskIntoConstraints="NO" id="nFw-0d-2Vo">
+                                <rect key="frame" x="146" y="318" width="240" height="191"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="eNm-TA-yHF"/>
+                                    <constraint firstAttribute="height" constant="191" id="vro-Pe-6gi"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_second_page_img_lemon" translatesAutoresizingMaskIntoConstraints="NO" id="iK3-nN-TSG">
+                                <rect key="frame" x="337" y="295" width="57" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Irg-Yf-lVm"/>
+                                    <constraint firstAttribute="width" constant="57" id="VWa-qT-Lof"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_second_page_img_carot" translatesAutoresizingMaskIntoConstraints="NO" id="Eyd-hZ-uY3">
+                                <rect key="frame" x="74" y="281" width="70" height="99"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="99" id="cMS-Yw-l5R"/>
+                                    <constraint firstAttribute="width" constant="70" id="gUA-q1-QSI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FRESH INGREDIENTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RnE-Ns-G07">
+                                <rect key="frame" x="161" y="211" width="211" height="29"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share seamlessly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ny9-JP-JzP">
+                                <rect key="frame" x="159" y="240" width="236.5" height="44"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ny9-JP-JzP" firstAttribute="leading" secondItem="RnE-Ns-G07" secondAttribute="leading" constant="-2" id="7zA-Vt-Vfc"/>
                             <constraint firstItem="O4K-HR-zgK" firstAttribute="centerY" secondItem="GlV-Vj-bYb" secondAttribute="centerY" constant="-28" id="OEk-kt-r9x"/>
-                            <constraint firstAttribute="trailing" secondItem="O4K-HR-zgK" secondAttribute="trailing" constant="-68" id="jRg-0x-0e1"/>
+                            <constraint firstItem="RnE-Ns-G07" firstAttribute="top" secondItem="O4K-HR-zgK" secondAttribute="top" constant="50" id="TIr-q4-jgA"/>
+                            <constraint firstAttribute="trailing" secondItem="iK3-nN-TSG" secondAttribute="trailing" constant="20" id="Xsq-9M-Fie"/>
+                            <constraint firstAttribute="trailing" secondItem="ZPD-TD-9Ec" secondAttribute="trailing" constant="50" id="Yj6-H7-5hf"/>
+                            <constraint firstItem="iK3-nN-TSG" firstAttribute="top" secondItem="O4K-HR-zgK" secondAttribute="top" constant="134" id="YvK-mt-4Zi"/>
+                            <constraint firstItem="ZPD-TD-9Ec" firstAttribute="bottom" secondItem="O4K-HR-zgK" secondAttribute="bottom" constant="-8" id="aRj-VL-3LW"/>
+                            <constraint firstItem="Eyd-hZ-uY3" firstAttribute="top" secondItem="O4K-HR-zgK" secondAttribute="top" constant="120" id="j37-mo-bLl"/>
+                            <constraint firstAttribute="trailing" secondItem="O4K-HR-zgK" secondAttribute="trailing" constant="-88" id="jRg-0x-0e1"/>
+                            <constraint firstItem="ny9-JP-JzP" firstAttribute="top" secondItem="RnE-Ns-G07" secondAttribute="bottom" id="mEp-1P-phH"/>
+                            <constraint firstItem="Eyd-hZ-uY3" firstAttribute="leading" secondItem="O4K-HR-zgK" secondAttribute="leading" constant="24" id="mlZ-0S-pYI"/>
+                            <constraint firstAttribute="trailing" secondItem="RnE-Ns-G07" secondAttribute="trailing" constant="42" id="pLH-FK-GTa"/>
+                            <constraint firstItem="nFw-0d-2Vo" firstAttribute="bottom" secondItem="O4K-HR-zgK" secondAttribute="bottom" constant="-170" id="sIZ-Yv-Zk0"/>
+                            <constraint firstAttribute="trailing" secondItem="nFw-0d-2Vo" secondAttribute="trailing" constant="28" id="ufC-w8-v3Q"/>
+                            <constraint firstAttribute="trailing" secondItem="ny9-JP-JzP" secondAttribute="trailing" constant="18.5" id="xEZ-bb-MjX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView1" destination="Eyd-hZ-uY3" id="Q6l-Nh-Ylc"/>
+                        <outlet property="imageView2" destination="iK3-nN-TSG" id="oH7-3p-53q"/>
+                        <outlet property="imageView3" destination="nFw-0d-2Vo" id="vMk-bA-MaJ"/>
+                        <outlet property="imageView4" destination="ZPD-TD-9Ec" id="suR-uh-U63"/>
+                        <outlet property="subtitleLabel" destination="ny9-JP-JzP" id="y25-zK-uUL"/>
+                        <outlet property="titleLabel" destination="RnE-Ns-G07" id="ps4-t3-SO4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vl4-zc-zHb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2275" y="-97"/>
+            <point key="canvasLocation" x="2273.913043478261" y="-97.098214285714278"/>
         </scene>
         <!--Third Page View Controller-->
         <scene sceneID="6e5-Pj-OsV">
@@ -197,19 +264,94 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_third_card_img" translatesAutoresizingMaskIntoConstraints="NO" id="G9z-DB-t8f">
-                                <rect key="frame" x="128" y="207.5" width="286" height="425"/>
+                                <rect key="frame" x="65.5" y="161" width="348.5" height="518"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="518" id="YYT-0c-NEe"/>
+                                    <constraint firstAttribute="width" secondItem="G9z-DB-t8f" secondAttribute="height" multiplier="286:425" id="cNz-nu-9qi"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="INSTANT MESSAGING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lSa-Or-62s">
+                                <rect key="frame" x="163.5" y="211" width="218.5" height="29"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share seamlessly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDm-rs-ufn">
+                                <rect key="frame" x="161.5" y="240" width="236.5" height="44"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_third_page_img_recipe" translatesAutoresizingMaskIntoConstraints="NO" id="jde-fV-fPK">
+                                <rect key="frame" x="102.5" y="375" width="148" height="137"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="148" id="rsr-KK-pfy"/>
+                                    <constraint firstAttribute="height" constant="137" id="s8a-0v-ovY"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_third_page_img_phone" translatesAutoresizingMaskIntoConstraints="NO" id="aom-i0-imD">
+                                <rect key="frame" x="207" y="525" width="207" height="133"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="207" id="JVE-bO-Ubm"/>
+                                    <constraint firstAttribute="height" constant="133" id="khs-g5-cZ7"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_third_page_img_mart" translatesAutoresizingMaskIntoConstraints="NO" id="lzh-Cn-vGI">
+                                <rect key="frame" x="254.5" y="329" width="122" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6Ln-9I-xY9"/>
+                                    <constraint firstAttribute="width" constant="122" id="hoG-9c-5wK"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_third_page_img_love" translatesAutoresizingMaskIntoConstraints="NO" id="qYM-IH-OSC">
+                                <rect key="frame" x="284.5" y="395" width="58" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="58" id="LqH-fI-jwj"/>
+                                    <constraint firstAttribute="height" constant="54" id="m0S-vm-sxz"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_third_page_img_good" translatesAutoresizingMaskIntoConstraints="NO" id="hyg-ER-8ip">
+                                <rect key="frame" x="284.5" y="455" width="86" height="79"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="86" id="Ah1-2T-XHX"/>
+                                    <constraint firstAttribute="height" constant="79" id="woQ-oy-fHh"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="hyg-ER-8ip" firstAttribute="bottom" secondItem="G9z-DB-t8f" secondAttribute="bottom" constant="-145" id="0We-NH-F78"/>
                             <constraint firstItem="G9z-DB-t8f" firstAttribute="centerY" secondItem="gRF-Og-2FD" secondAttribute="centerY" constant="-28" id="7UM-XB-Bzu"/>
+                            <constraint firstItem="lSa-Or-62s" firstAttribute="top" secondItem="G9z-DB-t8f" secondAttribute="top" constant="50" id="7oD-Bv-cRV"/>
+                            <constraint firstItem="lzh-Cn-vGI" firstAttribute="leading" secondItem="G9z-DB-t8f" secondAttribute="leading" constant="189" id="86U-GJ-JVB"/>
+                            <constraint firstItem="qYM-IH-OSC" firstAttribute="bottom" secondItem="G9z-DB-t8f" secondAttribute="bottom" constant="-230" id="D34-3G-mG6"/>
+                            <constraint firstItem="qYM-IH-OSC" firstAttribute="leading" secondItem="G9z-DB-t8f" secondAttribute="leading" constant="219" id="Fkh-aU-SfI"/>
+                            <constraint firstItem="jde-fV-fPK" firstAttribute="leading" secondItem="G9z-DB-t8f" secondAttribute="leading" constant="37" id="Tl0-pj-f5c"/>
+                            <constraint firstItem="RDm-rs-ufn" firstAttribute="leading" secondItem="lSa-Or-62s" secondAttribute="leading" constant="-2" id="dbW-OP-g4h"/>
                             <constraint firstAttribute="trailing" secondItem="G9z-DB-t8f" secondAttribute="trailing" id="dxK-QE-opH"/>
+                            <constraint firstItem="aom-i0-imD" firstAttribute="trailing" secondItem="G9z-DB-t8f" secondAttribute="trailing" id="jZr-Jc-VTw"/>
+                            <constraint firstItem="aom-i0-imD" firstAttribute="bottom" secondItem="G9z-DB-t8f" secondAttribute="bottom" constant="-21" id="nKA-LC-f3z"/>
+                            <constraint firstItem="hyg-ER-8ip" firstAttribute="leading" secondItem="G9z-DB-t8f" secondAttribute="leading" constant="219" id="nqN-zG-Ol0"/>
+                            <constraint firstItem="lzh-Cn-vGI" firstAttribute="bottom" secondItem="G9z-DB-t8f" secondAttribute="bottom" constant="-290" id="t6M-XI-wrh"/>
+                            <constraint firstItem="RDm-rs-ufn" firstAttribute="top" secondItem="lSa-Or-62s" secondAttribute="bottom" id="tLX-sG-jh4"/>
+                            <constraint firstAttribute="trailing" secondItem="RDm-rs-ufn" secondAttribute="trailing" constant="16" id="xlW-at-gbM"/>
+                            <constraint firstItem="jde-fV-fPK" firstAttribute="bottom" secondItem="G9z-DB-t8f" secondAttribute="bottom" constant="-167" id="z4P-dv-0RK"/>
+                            <constraint firstAttribute="trailing" secondItem="lSa-Or-62s" secondAttribute="trailing" constant="32" id="zsH-l5-vFD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView1" destination="lzh-Cn-vGI" id="J3H-lm-v7B"/>
+                        <outlet property="imageView2" destination="jde-fV-fPK" id="VjK-N3-ysU"/>
+                        <outlet property="imageView3" destination="qYM-IH-OSC" id="dda-Av-lSb"/>
+                        <outlet property="imageView4" destination="hyg-ER-8ip" id="GNd-Tl-Gii"/>
+                        <outlet property="imageView5" destination="aom-i0-imD" id="8MN-nM-ELD"/>
+                        <outlet property="subtitleLabel" destination="RDm-rs-ufn" id="6vy-QY-6M7"/>
+                        <outlet property="titleLabel" destination="lSa-Or-62s" id="oYK-Tl-UeA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGh-ie-5oA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3122" y="-97"/>
+            <point key="canvasLocation" x="3121.739130434783" y="-97.098214285714278"/>
         </scene>
     </scenes>
     <resources>
@@ -219,6 +361,15 @@
         <image name="guide_first_page_img_3" width="113" height="114"/>
         <image name="guide_first_page_img_4" width="106" height="107"/>
         <image name="guide_second_card_img" width="371" height="425"/>
+        <image name="guide_second_page_img_blast" width="204" height="138"/>
+        <image name="guide_second_page_img_bucket" width="167" height="160"/>
+        <image name="guide_second_page_img_carot" width="50" height="73"/>
+        <image name="guide_second_page_img_lemon" width="47" height="40"/>
         <image name="guide_third_card_img" width="286" height="425"/>
+        <image name="guide_third_page_img_good" width="71" height="65"/>
+        <image name="guide_third_page_img_love" width="48" height="44"/>
+        <image name="guide_third_page_img_mart" width="101" height="35"/>
+        <image name="guide_third_page_img_phone" width="175" height="110"/>
+        <image name="guide_third_page_img_recipe" width="122" height="112"/>
     </resources>
 </document>

@@ -7,24 +7,30 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SecondPageViewController: UIViewController {
-
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var imageView1: UIImageView!
+    @IBOutlet weak var imageView2: UIImageView!
+    @IBOutlet weak var imageView3: UIImageView!
+    @IBOutlet weak var imageView4: UIImageView!
+    
+    fileprivate let progressInput = BehaviorRelay<CGFloat>(value: 0.0)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension Reactive where Base: SecondPageViewController {
+    internal var progress: Binder<CGFloat> {
+        return Binder(base) { vc, percent in
+            vc.progressInput.accept(percent)
+        }
     }
-    */
-
 }
