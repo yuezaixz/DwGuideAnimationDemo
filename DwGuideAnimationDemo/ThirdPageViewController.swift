@@ -20,6 +20,7 @@ class ThirdPageViewController: UIViewController {
     @IBOutlet weak var imageView3: UIImageView!
     @IBOutlet weak var imageView4: UIImageView!
     @IBOutlet weak var imageView5: UIImageView!
+    @IBOutlet weak var handAndMobileView: UIView!
     
     fileprivate let inProgressInput = BehaviorRelay<CGFloat>(value: 0.0)
     fileprivate let outProgressInput = BehaviorRelay<CGFloat>(value: 0.0)
@@ -30,11 +31,21 @@ class ThirdPageViewController: UIViewController {
     }
     
     private func setupInProgress() {
-        // 文字出场
-        inProgressInput
-            .map { $0 < 0.5 ? 0 : $0 * 2 - 1.0 }
+        let inProgressInputSecondHalf = inProgressInput
+            .map { $0 < 0.5 ? 0 : $0 * 2 - 1.0 }.share()
+        let inProgressInputLastQuarter = inProgressInput
+            .map { $0 < 0.75 ? 0 : ($0 - 0.75) * 4 }.share()
+        
+        
+        
+        inProgressInputSecondHalf
             .subscribe(onNext: { [weak self] percent in
                 guard let self = self else { return }
+                // 手机
+                self.handAndMobileView.alpha = percent
+                self.handAndMobileView.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi) / 4 * (1 - percent))
+                
+                // 文字出场
                 self.titleLabel.alpha = percent
                 self.subtitleLabel.alpha = percent
                 
