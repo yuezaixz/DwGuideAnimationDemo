@@ -33,10 +33,28 @@ class ThirdPageViewController: UIViewController {
     private func setupInProgress() {
         let inProgressInputSecondHalf = inProgressInput
             .map { $0 < 0.5 ? 0 : $0 * 2 - 1.0 }.share()
-        let inProgressInputLastQuarter = inProgressInput
-            .map { $0 < 0.75 ? 0 : ($0 - 0.75) * 4 }.share()
+//        let inProgressInputLastQuarter = inProgressInput
+//            .map { $0 < 0.75 ? 0 : ($0 - 0.75) * 4 }.share()
         
-        
+        inProgressInputSecondHalf
+            .subscribe(onNext: { [weak self] percent in
+                guard let self = self else { return }
+                var newPercent = percent < 0.4 ? 0 : (percent - 0.4) * 2
+                // 为了有那个弹一下的效果
+                if newPercent > 1.1 {
+                    newPercent = 1.1 - (newPercent - 1.1)
+                }
+                
+                self.imageView1.transform = CGAffineTransform(scaleX: newPercent, y: newPercent)
+                self.imageView2.transform = CGAffineTransform(scaleX: newPercent, y: newPercent)
+                self.imageView3.transform = CGAffineTransform(scaleX: newPercent, y: newPercent)
+                self.imageView4.transform = CGAffineTransform(scaleX: newPercent, y: newPercent)
+                self.imageView1.alpha = min(newPercent, 1.0)
+                self.imageView2.alpha = min(newPercent, 1.0)
+                self.imageView3.alpha = min(newPercent, 1.0)
+                self.imageView4.alpha = min(newPercent, 1.0)
+                
+            }).disposed(by: disposeBag)
         
         inProgressInputSecondHalf
             .subscribe(onNext: { [weak self] percent in
