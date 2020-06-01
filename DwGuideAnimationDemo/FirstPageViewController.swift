@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 class FirstPageViewController: UIViewController {
-    private let disposeBage = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
@@ -26,12 +26,26 @@ class FirstPageViewController: UIViewController {
         super.viewDidLoad()
         progressInput.subscribe(onNext: { [weak self] percent in
             guard let self = self else { return }
-            let rotationAngle = CGAffineTransform(rotationAngle: CGFloat(2 * Double.pi) * percent)
+            let rotationAngle = CGAffineTransform(rotationAngle: CGFloat(Double.pi) * percent)
+            
             self.imageView1.transform = rotationAngle
             self.imageView2.transform = rotationAngle
             self.imageView3.transform = rotationAngle
             self.imageView4.transform = rotationAngle
-        }).disposed(by: disposeBage)
+        }).disposed(by: disposeBag)
+        
+        progressInput
+            .map { min($0 * 2, 1.0) }
+            .subscribe(onNext: { [weak self] percent in
+                guard let self = self else { return }
+
+                self.titleLabel.alpha = max(1 - percent * 1.5, 0.0)
+                self.subtitleLabel.alpha = max(1 - percent * 1.5, 0.0)
+                
+                CGAffineTransform(translationX: -150 * percent, y: 0).scaledBy(x: 1 - percent, y: 1 - percent)
+                self.titleLabel.transform = CGAffineTransform(translationX: 300 * percent, y: 0).scaledBy(x: 1 - percent / 2, y: 1 - percent / 2)
+                self.subtitleLabel.transform = CGAffineTransform(translationX: -300 * percent, y: 0).scaledBy(x: 1 - percent / 2, y: 1 - percent / 2)
+            }).disposed(by: disposeBag)
     }
 
 }
