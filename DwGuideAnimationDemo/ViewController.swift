@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        playView(0)
+        playView(0, animated: false)
         mainScrollView.contentSize = CGSize(width: UIScreen.main.bounds.width * 3, height: UIScreen.main.bounds.height)
         mainScrollView.rx.currentPage
             .subscribe(onNext: { [weak self] in
@@ -94,7 +94,7 @@ class ViewController: UIViewController {
     }
     
     // 放开的情况调用
-    func playView(_ index: Int) {
+    func playView(_ index: Int, animated: Bool = true) {
         guard videoIndex != index else { return }
         videoIndex = index
         let duration: TimeInterval = mainScrollView.isTracking ? 0.2 : 0.5
@@ -119,6 +119,12 @@ class ViewController: UIViewController {
                 videoType: "mp4",
                 isMuted: true
             )
+        }
+        
+        if !animated {
+            currentBg.alpha = 0.0
+            nextBg.alpha = 1.0
+            return
         }
         
         // 想用来取消，暂时效果不好，待优化。
