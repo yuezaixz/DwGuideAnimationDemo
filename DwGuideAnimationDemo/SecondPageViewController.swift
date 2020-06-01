@@ -41,7 +41,7 @@ class SecondPageViewController: UIViewController {
             self.imageView3.transform = CGAffineTransform(translationX: 0, y: 140 - 140 * percent).scaledBy(x: scalePercent, y: scalePercent)
         }).disposed(by: disposeBag)
         
-        //
+        // 胡萝卜和柠檬入场动画
         inProgressInput
             .map { $0 < 0.75 ? 0 : ($0 - 0.75) * 4 }
             .subscribe(onNext: { [weak self] percent in
@@ -68,14 +68,22 @@ class SecondPageViewController: UIViewController {
     
     private func setupOutProgress() {
         
-        outProgressInput.subscribe(onNext: { [weak self] percent in
+        let outProgressInputFirstHalf = outProgressInput
+            .map { min($0 * 2, 1.0) }.share()
+        
+        outProgressInputFirstHalf.subscribe(onNext: { [weak self] percent in
             guard let self = self else { return }
+//            self.imageView1.alpha = percent //胡萝卜不消失
+            self.imageView2.alpha = 1 - percent
+            self.imageView3.alpha = 1 - percent
+            
+            self.imageView1.transform = CGAffineTransform(translationX: -10 * percent, y: -25 * percent)
+            self.imageView2.transform = CGAffineTransform(translationX: 15 * percent, y: -60 * percent)
             
         }).disposed(by: disposeBag)
         
         // 文字出场
-        outProgressInput
-            .map { min($0 * 2, 1.0) }
+        outProgressInputFirstHalf
             .subscribe(onNext: { [weak self] percent in
                 guard let self = self else { return }
                 
