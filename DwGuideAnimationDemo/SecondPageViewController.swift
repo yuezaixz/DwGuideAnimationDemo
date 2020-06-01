@@ -34,6 +34,11 @@ class SecondPageViewController: UIViewController {
         let inProgressInputSecondHalf = inProgressInput
             .map { $0 < 0.5 ? 0 : $0 * 2 - 1.0 }.share()
             
+        inProgressInput.subscribe(onNext: { [weak self] percent in
+            guard let self = self else { return }
+            self.view.transform = CGAffineTransform(scaleX: 0.7 + 0.3 * percent, y: 0.7 + 0.3 * percent)
+        }).disposed(by: disposeBag)
+        
         // 菜篮里的元素出场动画
         inProgressInputSecondHalf.subscribe(onNext: { [weak self] percent in
             guard let self = self else { return }
@@ -70,6 +75,11 @@ class SecondPageViewController: UIViewController {
         
         let outProgressInputFirstHalf = outProgressInput
             .map { min($0 * 2, 1.0) }.share()
+                
+        outProgressInput.subscribe(onNext: { [weak self] percent in
+            guard let self = self else { return }
+            self.view.transform = CGAffineTransform(scaleX: 1.0 - 0.3 * percent, y: 1.0 - 0.3 * percent)
+        }).disposed(by: disposeBag)
         
         outProgressInputFirstHalf.subscribe(onNext: { [weak self] percent in
             guard let self = self else { return }

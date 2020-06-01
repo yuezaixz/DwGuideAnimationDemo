@@ -24,6 +24,12 @@ class FirstPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        progressInput.subscribe(onNext: { [weak self] percent in
+            guard let self = self else { return }
+            self.view.transform = CGAffineTransform(scaleX: 1.0 - 0.3 * percent, y: 1.0 - 0.3 * percent)
+        }).disposed(by: disposeBag)
+        
         progressInput.subscribe(onNext: { [weak self] percent in
             guard let self = self else { return }
             let rotationAngle = CGAffineTransform(rotationAngle: CGFloat(Double.pi) * percent)

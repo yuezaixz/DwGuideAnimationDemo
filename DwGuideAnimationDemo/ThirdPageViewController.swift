@@ -31,6 +31,12 @@ class ThirdPageViewController: UIViewController {
     }
     
     private func setupInProgress() {
+            
+        inProgressInput.subscribe(onNext: { [weak self] percent in
+            guard let self = self else { return }
+            self.view.transform = CGAffineTransform(scaleX: 0.7 + 0.3 * percent, y: 0.7 + 0.3 * percent)
+        }).disposed(by: disposeBag)
+        
         let inProgressInputSecondHalf = inProgressInput
             .map { $0 < 0.5 ? 0 : $0 * 2 - 1.0 }.share()
 //        let inProgressInputLastQuarter = inProgressInput
