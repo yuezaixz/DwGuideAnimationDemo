@@ -46,8 +46,18 @@ class ViewController: UIViewController {
     var vc2: SecondPageViewController!
     var vc3: ThirdPageViewController!
     
+    var players: [VideoBackground] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        players.append(VideoBackground())
+        players.append(VideoBackground())
+        players.append(VideoBackground())
+        
+        bgViews[2].layer.rx.observe(CGFloat.self, "opacity").subscribe(onNext: { opacity in
+            print(opacity!)
+        }).disposed(by: disposeBag)
+        
         bgViews[1].layer.opacity = 0.0
         bgViews[2].layer.opacity = 0.0
         
@@ -104,59 +114,51 @@ class ViewController: UIViewController {
         self.currentBgIndex += 1
         let nextBg = self.bgViews[self.currentBgIndex % 3]
         
-        if currentBgIndex % 2 == 0 {
-            try? VideoBackground.shared.play(
-                view: nextBg,
-                videoName: "clip\(videoIndex + 1)",
-                videoType: "mp4",
-                isMuted: true
-            )
-        } else {
-            try? VideoBackground.shared2.play(
-                view: nextBg,
-                videoName: "clip\(videoIndex + 1)",
-                videoType: "mp4",
-                isMuted: true
-            )
-        }
+        try? players[self.currentBgIndex % 3].play(
+            view: nextBg,
+            videoName: "clip\(videoIndex + 1)",
+            videoType: "mp4",
+            isMuted: true
+        )
+//        players[(self.currentBgIndex + 1) % 3].cleanUp()
         
         if !animated {
-            currentBg.alpha = 0.0
-            nextBg.alpha = 1.0
+            currentBg.layer.opacity = 0.0
+            nextBg.layer.opacity = 1.0
+            self.bgViews[(self.currentBgIndex + 1) % 3].layer.opacity = 0.0
             return
         }
-        currentBg.layer.removeAllAnimations()
-//        nextBg.layer.removeAllAnimations()
+        isAnimation = true
         
         // 想用来取消，暂时效果不好，待优化。
         let disapearAnimation = CABasicAnimation(keyPath: "opacity")
         disapearAnimation.duration = duration
-        disapearAnimation.fromValue = 1.0
+//        disapearAnimation.fromValue = 1.0
         disapearAnimation.toValue = 0.0
         disapearAnimation.fillMode = .forwards
         disapearAnimation.isRemovedOnCompletion = false
-        currentBg.layer.add(disapearAnimation, forKey: "DisapearAnimation")
         disapearAnimation.delegate = self
+        currentBg.layer.add(disapearAnimation, forKey: "DisapearAnimation\((self.currentBgIndex - 1) % 3)")
 
         let apearAnimation = CABasicAnimation(keyPath: "opacity")
         apearAnimation.duration = duration
-        apearAnimation.fromValue = 0.0
+//        apearAnimation.fromValue = 0.0
         apearAnimation.toValue = 1.0
         apearAnimation.fillMode = .forwards
         apearAnimation.isRemovedOnCompletion = false
-        nextBg.layer.add(apearAnimation, forKey: "ApearAnimation")
+        nextBg.layer.add(apearAnimation, forKey: "ApearAnimation\(self.currentBgIndex % 3)")
         
     }
+    
+    var isAnimation = false
 }
 
 extension ViewController: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        print("animationDidStop")
+        isAnimation = false
         if flag {
-            if self.currentBgIndex % 2 == 0 {
-                VideoBackground.shared2.cleanUp()
-            } else {
-                VideoBackground.shared.cleanUp()
-            }
+//            players[(self.currentBgIndex - 1) % 3].cleanUp()
         }
     }
 }

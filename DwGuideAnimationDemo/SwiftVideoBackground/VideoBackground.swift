@@ -13,7 +13,6 @@ import UIKit
 public class VideoBackground {
     /// Singleton that can play one video on one `UIView` at a time.
     public static let shared = VideoBackground()
-    public static let shared2 = VideoBackground()
 
     /// Change this `CGFloat` to adjust the darkness of the video. Value `0` to `1`. Higher numbers are darker. Setting
     /// to an invalid value does nothing.
