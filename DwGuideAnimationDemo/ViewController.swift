@@ -125,7 +125,7 @@ class ViewController: UIViewController {
             nextBg.alpha = 1.0
             return
         }
-//        currentBg.layer.removeAllAnimations()
+        currentBg.layer.removeAllAnimations()
 //        nextBg.layer.removeAllAnimations()
         
         // 想用来取消，暂时效果不好，待优化。
