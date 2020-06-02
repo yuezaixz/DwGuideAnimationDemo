@@ -23,7 +23,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
-                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7y-Km-3Sy" userLabel="BgView2">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R7y-Km-3Sy" userLabel="BgView2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6sx-Eo-9QT" userLabel="BgView3">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -41,10 +45,14 @@
                         <constraints>
                             <constraint firstItem="xDI-fi-oAG" firstAttribute="leading" secondItem="Msw-0h-XLC" secondAttribute="leading" id="3UX-ES-5G1"/>
                             <constraint firstAttribute="trailing" secondItem="xDI-fi-oAG" secondAttribute="trailing" id="3mM-l7-eOJ"/>
+                            <constraint firstItem="6sx-Eo-9QT" firstAttribute="bottom" secondItem="RYt-2d-4XZ" secondAttribute="bottom" id="F2i-kq-u0U"/>
                             <constraint firstItem="R7y-Km-3Sy" firstAttribute="leading" secondItem="RYt-2d-4XZ" secondAttribute="leading" id="Lxf-kS-fAQ"/>
                             <constraint firstItem="R7y-Km-3Sy" firstAttribute="trailing" secondItem="RYt-2d-4XZ" secondAttribute="trailing" id="T6f-Ze-IxH"/>
                             <constraint firstAttribute="bottom" secondItem="RYt-2d-4XZ" secondAttribute="bottom" id="V93-mK-OQx"/>
+                            <constraint firstItem="6sx-Eo-9QT" firstAttribute="trailing" secondItem="RYt-2d-4XZ" secondAttribute="trailing" id="VsP-C5-tJC"/>
                             <constraint firstItem="RYt-2d-4XZ" firstAttribute="top" secondItem="Msw-0h-XLC" secondAttribute="top" id="XHF-fK-fpe"/>
+                            <constraint firstItem="6sx-Eo-9QT" firstAttribute="top" secondItem="RYt-2d-4XZ" secondAttribute="top" id="ZvV-wI-Aug"/>
+                            <constraint firstItem="6sx-Eo-9QT" firstAttribute="leading" secondItem="RYt-2d-4XZ" secondAttribute="leading" id="aI0-zp-I78"/>
                             <constraint firstItem="IPj-gu-vC7" firstAttribute="centerY" secondItem="xDI-fi-oAG" secondAttribute="centerY" constant="230" id="dTp-E5-rU3"/>
                             <constraint firstAttribute="bottom" secondItem="xDI-fi-oAG" secondAttribute="bottom" id="eYU-XH-S1t"/>
                             <constraint firstItem="R7y-Km-3Sy" firstAttribute="bottom" secondItem="RYt-2d-4XZ" secondAttribute="bottom" id="ebG-Du-h71"/>
@@ -61,6 +69,7 @@
                         <outlet property="pageControl" destination="IPj-gu-vC7" id="s3R-o5-srY"/>
                         <outletCollection property="bgViews" destination="RYt-2d-4XZ" collectionClass="NSMutableArray" id="La7-0s-qJg"/>
                         <outletCollection property="bgViews" destination="R7y-Km-3Sy" collectionClass="NSMutableArray" id="go2-ae-vCf"/>
+                        <outletCollection property="bgViews" destination="6sx-Eo-9QT" collectionClass="NSMutableArray" id="b1g-RX-xp4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lep-qK-UtZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -48,6 +48,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bgViews[1].layer.opacity = 0.0
+        bgViews[2].layer.opacity = 0.0
         
         playView(0, animated: false)
         mainScrollView.contentSize = CGSize(width: UIScreen.main.bounds.width * 3, height: UIScreen.main.bounds.height)
@@ -98,12 +100,9 @@ class ViewController: UIViewController {
         guard videoIndex != index else { return }
         videoIndex = index
         let duration: TimeInterval = mainScrollView.isTracking ? 0.2 : 0.5
-        let currentBg = self.bgViews[self.currentBgIndex % 2]
+        let currentBg = self.bgViews[self.currentBgIndex % 3]
         self.currentBgIndex += 1
-        let nextBg = self.bgViews[self.currentBgIndex % 2]
-        
-//        currentBg.layer.removeAllAnimations()
-//        nextBg.layer.removeAllAnimations()
+        let nextBg = self.bgViews[self.currentBgIndex % 3]
         
         if currentBgIndex % 2 == 0 {
             try? VideoBackground.shared.play(
@@ -126,45 +125,41 @@ class ViewController: UIViewController {
             nextBg.alpha = 1.0
             return
         }
+//        currentBg.layer.removeAllAnimations()
+//        nextBg.layer.removeAllAnimations()
         
         // 想用来取消，暂时效果不好，待优化。
-//        let disapearAnimation = CABasicAnimation(keyPath: "opacity")
-//        disapearAnimation.duration = duration
-//        disapearAnimation.toValue = 0.0
-//        disapearAnimation.fillMode = .forwards
-//        disapearAnimation.isRemovedOnCompletion = false
-//        currentBg.layer.add(disapearAnimation, forKey: "DisapearAnimation")
-//
-//        let apearAnimation = CABasicAnimation(keyPath: "opacity")
-//        apearAnimation.duration = duration
-//        apearAnimation.toValue = 1.0
-//        apearAnimation.fillMode = .forwards
-//        apearAnimation.isRemovedOnCompletion = false
-//        nextBg.layer.add(disapearAnimation, forKey: "ApearAnimation")
+        let disapearAnimation = CABasicAnimation(keyPath: "opacity")
+        disapearAnimation.duration = duration
+        disapearAnimation.fromValue = 1.0
+        disapearAnimation.toValue = 0.0
+        disapearAnimation.fillMode = .forwards
+        disapearAnimation.isRemovedOnCompletion = false
+        currentBg.layer.add(disapearAnimation, forKey: "DisapearAnimation")
+        disapearAnimation.delegate = self
+
+        let apearAnimation = CABasicAnimation(keyPath: "opacity")
+        apearAnimation.duration = duration
+        apearAnimation.fromValue = 0.0
+        apearAnimation.toValue = 1.0
+        apearAnimation.fillMode = .forwards
+        apearAnimation.isRemovedOnCompletion = false
+        nextBg.layer.add(apearAnimation, forKey: "ApearAnimation")
         
-        UIView.animate(withDuration: duration, animations: {
-            currentBg.alpha = 0.0
-        }) {  _ in
+    }
+}
+
+extension ViewController: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if flag {
             if self.currentBgIndex % 2 == 0 {
                 VideoBackground.shared2.cleanUp()
             } else {
                 VideoBackground.shared.cleanUp()
             }
         }
-        UIView.animate(withDuration: duration, animations: {
-            nextBg.alpha = 1.0
-        })
-        
     }
 }
 
 extension ViewController: UIScrollViewDelegate {
-    // 因为是page的scrollView，所以一定会走结束减速。在这里停止视频
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if self.currentBgIndex % 2 == 0 {
-            VideoBackground.shared2.cleanUp()
-        } else {
-            VideoBackground.shared.cleanUp()
-        }
-    }
 }
