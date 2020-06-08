@@ -99,7 +99,8 @@ class ViewController: UIViewController {
     func playView(_ index: Int, animated: Bool = true) {
         guard videoIndex != index else { return }
         videoIndex = index
-        let duration: TimeInterval = mainScrollView.isTracking ? 0.2 : 0.5
+//        let duration: TimeInterval = mainScrollView.isTracking ? 0.2 : 0.5
+        let duration: TimeInterval = 0.5
         let currentBg = self.bgViews[self.currentBgIndex % 3]
         self.currentBgIndex += 1
         let nextBg = self.bgViews[self.currentBgIndex % 3]
@@ -152,11 +153,11 @@ class ViewController: UIViewController {
 extension ViewController: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
         if flag {
-            if self.currentBgIndex % 2 == 0 {
-                VideoBackground.shared2.cleanUp()
-            } else {
-                VideoBackground.shared.cleanUp()
-            }
+//            if self.currentBgIndex % 2 == 0 {
+//                VideoBackground.shared2.cleanUp()
+//            } else {
+//                VideoBackground.shared.cleanUp()
+//            }
         }
     }
 }
